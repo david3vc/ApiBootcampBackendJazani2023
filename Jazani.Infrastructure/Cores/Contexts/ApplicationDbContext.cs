@@ -1,5 +1,7 @@
 ﻿using Jazani.Domain.Admins.Models;
+using Jazani.Domain.Generals.Models;
 using Jazani.Infrastructure.Admins.Configurations;
+using Jazani.Infrastructure.Generals.Configurations;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,6 +19,7 @@ namespace Jazani.Infrastructure.Cores.Contexts
         #region "DbSet"
         public DbSet<Office> Offices { get; set; }
         public DbSet<Nationality> Nationalities { get; set; }
+        public DbSet<MineralType> MineralTypes { get; set; }
 
         #endregion
 
@@ -26,6 +29,7 @@ namespace Jazani.Infrastructure.Cores.Contexts
 
             modelBuilder.ApplyConfiguration(new OfficeConfiguration());
             modelBuilder.ApplyConfiguration(new NationalityConfiguration());
+            modelBuilder.ApplyConfiguration(new MineralTypeConfiguration());
         }
 
     }
