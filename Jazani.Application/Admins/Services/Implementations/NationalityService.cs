@@ -33,7 +33,7 @@ namespace Jazani.Application.Admins.Services.Implementations
         public async Task<NationalityDto> CreateAsync(NationalitySaveDto nationalitySaveDto)
         {
             Nationality nationality = _mapper.Map<Nationality>(nationalitySaveDto);
-            nationality.RegistrationDate = DateTimeOffset.Now;
+            nationality.RegistrationDate = DateTime.Now;
             nationality.State = true;
 
             Nationality nationalitySaved = await _nationalityRepository.SaveAsync(nationality);

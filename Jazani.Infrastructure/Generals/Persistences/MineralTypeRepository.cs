@@ -7,6 +7,8 @@ namespace Jazani.Infrastructure.Generals.Persistences
 {
     public class MineralTypeRepository : CrudRepository<MineralType, int>, IMineralTypeRepository
     {
-        public MineralTypeRepository(ApplicationDbContext dbContext) : base(dbContext) { }
+        public MineralTypeRepository(ApplicationDbContext dbContext) : base(dbContext)
+        {
+        }
     }
 }
