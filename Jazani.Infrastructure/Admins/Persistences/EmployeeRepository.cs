@@ -20,6 +20,7 @@ namespace Jazani.Infrastructure.Admins.Persistences
             return await _dbContext.Set<Employee>()
                 .Include(t => t.IdentificationDocument)
                 .Include(t => t.Nationality)
+                .Include(t => t.CivilStatus)
                 .AsNoTracking()
                 .ToListAsync();
         }
@@ -29,6 +30,7 @@ namespace Jazani.Infrastructure.Admins.Persistences
             return await _dbContext.Set<Employee>()
                 .Include(t => t.IdentificationDocument)
                 .Include(t => t.Nationality)
+                .Include(t => t.CivilStatus)
                 .FirstOrDefaultAsync(t => t.Id == id);
         }
     }

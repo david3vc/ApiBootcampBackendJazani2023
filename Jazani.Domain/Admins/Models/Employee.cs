@@ -23,5 +23,6 @@
 
         public virtual IdentificationDocument? IdentificationDocument { get; set; }
         public virtual Nationality? Nationality { get; set; }
+        public virtual CivilStatus? CivilStatus { get; set; }
     }
 }

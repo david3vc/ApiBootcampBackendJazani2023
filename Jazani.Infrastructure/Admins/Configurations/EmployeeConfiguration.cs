@@ -33,6 +33,7 @@ namespace Jazani.Infrastructure.Admins.Configurations
 
             builder.HasOne(one => one.IdentificationDocument).WithMany(many => many.Employees).HasForeignKey(fk => fk.IdentificationDocumentId);
             builder.HasOne(one => one.Nationality).WithMany(many => many.Employees).HasForeignKey(fk => fk.NationalityId);
+            builder.HasOne(one => one.CivilStatus).WithMany(many => many.Employees).HasForeignKey(fk => fk.CivilStatusId);
         }
     }
 }

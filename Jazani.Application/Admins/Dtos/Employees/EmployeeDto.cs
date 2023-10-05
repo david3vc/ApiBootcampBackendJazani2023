@@ -1,4 +1,5 @@
-﻿using Jazani.Application.Admins.Dtos.IdentificationDocuments;
+﻿using Jazani.Application.Admins.Dtos.CivilStatuses;
+using Jazani.Application.Admins.Dtos.IdentificationDocuments;
 using Jazani.Application.Admins.Dtos.Nationalities;
 
 namespace Jazani.Application.Admins.Dtos.Employees
@@ -26,5 +27,6 @@ namespace Jazani.Application.Admins.Dtos.Employees
 
         public IdentificationDocumentSimpleDto IdentificationDocument { get; set; }
         public NationalitySimpleDto Nationality { get; set; }
+        public CivilStatusSimpleDto CivilStatus { get; set; }
     }
 }
