@@ -1,5 +1,4 @@
 ﻿using Jazani.Application.Generals.Dtos.Minerals;
-using Jazani.Application.Generals.Dtos.MineralTypes;
 using Jazani.Application.Generals.Services;
 using Microsoft.AspNetCore.Mvc;
 

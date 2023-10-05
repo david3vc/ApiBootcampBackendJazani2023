@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Jazani.Domain.Generals.Models;
 
-namespace Jazani.Application.Generals.Dtos.Minerals.profiles
+namespace Jazani.Application.Generals.Dtos.Minerals.Profiles
 {
     public class MineralProfile : Profile
     {
