@@ -1,11 +1,9 @@
 ﻿using Jazani.Domain.Admins.Models;
+using Jazani.Domain.Cores.Repositories;
 
 namespace Jazani.Domain.Admins.Repositories
 {
-    public interface INationalityRepository
+    public interface INationalityRepository : ICrudRepository<Nationality, int>
     {
-        Task<IReadOnlyList<Nationality>> FindAllAsync();
-        Task<Nationality?> FindByIdAsync(int id);
-        Task<Nationality> SaveAsync(Nationality nationality);
     }
 }
