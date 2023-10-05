@@ -8,6 +8,8 @@ namespace Jazani.Application.Admins.Dtos.Nationalities.Profiles
         public NationalityProfile()
         {
             CreateMap<Nationality, NationalityDto>();
+            CreateMap<Nationality, NationalitySimpleDto>();
+
             CreateMap<Nationality, NationalitySaveDto>().ReverseMap();
         }
     }

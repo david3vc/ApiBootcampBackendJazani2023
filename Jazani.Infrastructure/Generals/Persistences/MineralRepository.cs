@@ -9,6 +9,7 @@ namespace Jazani.Infrastructure.Generals.Persistences
     public class MineralRepository : CrudRepository<Mineral, int>, IMineralRepository
     {
         public readonly ApplicationDbContext _dbContext;
+
         public MineralRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
