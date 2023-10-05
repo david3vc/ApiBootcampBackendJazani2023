@@ -2,11 +2,6 @@
 using Jazani.Application.Admins.Dtos.Nationalities;
 using Jazani.Domain.Admins.Models;
 using Jazani.Domain.Admins.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Jazani.Application.Admins.Services.Implementations
 {

@@ -1,12 +1,6 @@
 ﻿using Jazani.Domain.Cores.Repositories;
 using Jazani.Infrastructure.Cores.Contexts;
-using System;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Jazani.Domain.Admins.Models;
 
 namespace Jazani.Infrastructure.Cores.Repositories
 {
