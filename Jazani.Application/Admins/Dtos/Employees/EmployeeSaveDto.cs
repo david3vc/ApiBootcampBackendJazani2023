@@ -16,7 +16,7 @@
         public int? IdentificationDocumentId { get; set; }
         public int? CivilStatusId { get; set; }
         public bool? IsSincronized { get; set; }
-        public DateTime BirthDate { get; set; }
-        public DateTime StartDate { get; set; }
+        public DateTime? BirthDate { get; set; }
+        public DateTime? StartDate { get; set; }
     }
 }
