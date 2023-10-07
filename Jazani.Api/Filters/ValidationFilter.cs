@@ -8,9 +8,9 @@ namespace Jazani.Api.Filters
     {
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
-            if(!context.ModelState.IsValid)
+            if (!context.ModelState.IsValid)
             {
-                var errrosModelState = context.ModelState
+                var errorsModelState = context.ModelState
                     .Where(x => x.Value?.Errors.Count > 0)
                     .ToDictionary(kvp => kvp.Key, kvp => kvp.Value?.Errors.Select(x => x.ErrorMessage))
                     .ToList();
@@ -19,7 +19,7 @@ namespace Jazani.Api.Filters
                 errorResponse.Message = "Ingrese todos los campos requeridos";
                 errorResponse.Errors = new List<ErrorValidationModel>();
 
-                errrosModelState.ForEach(error =>
+                errorsModelState.ForEach(error =>
                 {
                     foreach (var message in error.Value)
                     {
@@ -30,10 +30,11 @@ namespace Jazani.Api.Filters
                         });
                     }
                 });
-                
+
                 context.Result = new BadRequestObjectResult(errorResponse);
                 return;
             }
+
 
             await next();
         }
