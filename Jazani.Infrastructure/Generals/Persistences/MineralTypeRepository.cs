@@ -1,4 +1,6 @@
-﻿using Jazani.Domain.Generals.Models;
+﻿using Jazani.Core.Paginations;
+using Jazani.Domain.Cores.Paginations;
+using Jazani.Domain.Generals.Models;
 using Jazani.Domain.Generals.Repositories;
 using Jazani.Infrastructure.Cores.Contexts;
 using Jazani.Infrastructure.Cores.Repositories;
@@ -7,8 +9,29 @@ namespace Jazani.Infrastructure.Generals.Persistences
 {
     public class MineralTypeRepository : CrudRepository<MineralType, int>, IMineralTypeRepository
     {
-        public MineralTypeRepository(ApplicationDbContext dbContext) : base(dbContext)
+        private readonly ApplicationDbContext _dbContext;
+        private readonly IPaginator<MineralType> _paginator;
+
+        public MineralTypeRepository(ApplicationDbContext dbContext, IPaginator<MineralType> paginator) : base(dbContext)
         {
+            _dbContext = dbContext;
+            _paginator = paginator;
+        }
+
+        public async Task<ResponsePagination<MineralType>> PaginatedSearch(RequestPagination<MineralType> request)
+        {
+            var filter = request.Filter;
+
+            var query = _dbContext.Set<MineralType>().AsQueryable();
+
+            if (filter is not null)
+            {
+                query = query.Where(x => string.IsNullOrWhiteSpace(filter.Name) || x.Name.ToUpper().Contains(filter.Name.ToUpper()));
+            }
+
+            query = query.OrderByDescending(x => x.Id);
+
+            return await _paginator.Paginate(query, request);
         }
     }
 }
