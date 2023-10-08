@@ -1,14 +1,9 @@
-﻿using Jazani.Domain.Admins.Models;
+﻿using Jazani.Domain.Mcs.Models;
 using Jazani.Infrastructure.Cores.Converters;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Jazani.Infrastructure.Admins.Configurations
+namespace Jazani.Infrastructure.Mcs.Configurations
 {
     public class InvestmentConceptConfiguration : IEntityTypeConfiguration<InvestmentConcept>
     {

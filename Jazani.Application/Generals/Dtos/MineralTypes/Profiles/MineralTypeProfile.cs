@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Jazani.Application.Generals.Dtos.MineralTypes.Profiles.Mappers;
 using Jazani.Core.Paginations;
 using Jazani.Domain.Generals.Models;
 
@@ -18,7 +17,7 @@ namespace Jazani.Application.Generals.Dtos.MineralTypes.Profiles
             CreateMap<ResponsePagination<MineralType>, ResponsePagination<MineralTypeDto>>();
             CreateMap<RequestPagination<MineralType>, RequestPagination<MineralTypeDto>>()
                 .ReverseMap();
-                //.AfterMap<MineralTypeReverseMapper>();
+            //.AfterMap<MineralTypeReverseMapper>();
         }
     }
 }

@@ -1,17 +1,11 @@
 ﻿using AutoMapper;
-using Jazani.Application.Admins.Dtos.InvestmentConcepts;
-using Jazani.Application.Admins.Dtos.Nationalities;
 using Jazani.Application.Cores.Exceptions;
 using Jazani.Application.Generals.Services.Implementations;
-using Jazani.Domain.Admins.Models;
-using Jazani.Domain.Admins.Repositories;
-using Jazani.Domain.Generals.Models;
+using Jazani.Application.Mcs.Dtos.InvestmentConcepts;
+using Jazani.Application.Mcs.Services;
+using Jazani.Domain.Mcs.Models;
+using Jazani.Domain.Mcs.Repositories;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Jazani.Application.Admins.Services.Implementations
 {

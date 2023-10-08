@@ -1,13 +1,7 @@
 ﻿using AutoMapper;
-using Jazani.Application.Admins.Dtos.Nationalities;
-using Jazani.Domain.Admins.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Jazani.Domain.Mcs.Models;
 
-namespace Jazani.Application.Admins.Dtos.InvestmentConcepts.Profiles
+namespace Jazani.Application.Mcs.Dtos.InvestmentConcepts.Profiles
 {
     public class InvestmentConceptProfile : Profile
     {

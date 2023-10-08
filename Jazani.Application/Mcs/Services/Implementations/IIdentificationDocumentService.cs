@@ -1,6 +1,6 @@
 ﻿using Jazani.Application.Admins.Dtos.IdentificationDocuments;
 
-namespace Jazani.Application.Admins.Services
+namespace Jazani.Application.Mcs.Services.Implementations
 {
     public interface IIdentificationDocumentService
     {

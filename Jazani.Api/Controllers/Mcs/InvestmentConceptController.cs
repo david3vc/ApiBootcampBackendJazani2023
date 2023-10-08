@@ -1,10 +1,10 @@
 ﻿using Jazani.Api.Exceptions;
-using Jazani.Application.Admins.Dtos.InvestmentConcepts;
-using Jazani.Application.Admins.Services;
+using Jazani.Application.Mcs.Dtos.InvestmentConcepts;
+using Jazani.Application.Mcs.Services;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Jazani.Api.Controllers.Admins
+namespace Jazani.Api.Controllers.Mcs
 {
     [Route("api/[controller]")]
     public class InvestmentConceptController : Controller

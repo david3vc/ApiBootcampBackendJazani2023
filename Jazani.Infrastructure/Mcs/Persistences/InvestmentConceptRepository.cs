@@ -1,14 +1,9 @@
-﻿using Jazani.Domain.Admins.Models;
-using Jazani.Domain.Admins.Repositories;
+﻿using Jazani.Domain.Mcs.Models;
+using Jazani.Domain.Mcs.Repositories;
 using Jazani.Infrastructure.Cores.Contexts;
 using Jazani.Infrastructure.Cores.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Jazani.Infrastructure.Admins.Persistences
+namespace Jazani.Infrastructure.Mcs.Persistences
 {
     public class InvestmentConceptRepository : CrudRepository<InvestmentConcept, int>, IInvestmentConceptRepository
     {
