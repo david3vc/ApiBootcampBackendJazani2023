@@ -1,5 +1,5 @@
 ﻿using Jazani.Application.Admins.Dtos.IdentificationDocuments;
-using Jazani.Application.Mcs.Services.Implementations;
+using Jazani.Application.Admins.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Jazani.Api.Controllers.Admins

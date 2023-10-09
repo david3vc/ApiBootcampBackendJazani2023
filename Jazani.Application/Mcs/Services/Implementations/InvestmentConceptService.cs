@@ -1,21 +1,19 @@
 ﻿using AutoMapper;
 using Jazani.Application.Cores.Exceptions;
-using Jazani.Application.Generals.Services.Implementations;
 using Jazani.Application.Mcs.Dtos.InvestmentConcepts;
-using Jazani.Application.Mcs.Services;
 using Jazani.Domain.Mcs.Models;
 using Jazani.Domain.Mcs.Repositories;
 using Microsoft.Extensions.Logging;
 
-namespace Jazani.Application.Admins.Services.Implementations
+namespace Jazani.Application.Mcs.Services.Implementations
 {
     public class InvestmentConceptService : IInvestmentConceptService
     {
         private readonly IInvestmentConceptRepository _investmentConceptRepository;
         private readonly IMapper _mapper;
-        private readonly ILogger<MineralTypeService> _logger;
+        private readonly ILogger<InvestmentConceptService> _logger;
 
-        public InvestmentConceptService(IInvestmentConceptRepository investmentConceptRepository, IMapper mapper, ILogger<MineralTypeService> logger)
+        public InvestmentConceptService(IInvestmentConceptRepository investmentConceptRepository, IMapper mapper, ILogger<InvestmentConceptService> logger)
         {
             _investmentConceptRepository = investmentConceptRepository;
             _mapper = mapper;
@@ -60,7 +58,7 @@ namespace Jazani.Application.Admins.Services.Implementations
                 throw InvestmentConceptNotFound(id);
             }
 
-            _mapper.Map<InvestmentConceptSaveDto, InvestmentConcept>(investmentConceptSaveDto, investmentConcept);
+            _mapper.Map(investmentConceptSaveDto, investmentConcept);
 
             InvestmentConcept investmentConceptSaved = await _investmentConceptRepository.SaveAsync(investmentConcept);
 
