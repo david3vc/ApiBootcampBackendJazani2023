@@ -1,4 +1,6 @@
-﻿namespace Jazani.Domain.Generals.Models
+﻿using Jazani.Domain.Mcs.Models;
+
+namespace Jazani.Domain.Generals.Models
 {
     public class MineralType
     {
@@ -10,5 +12,6 @@
         public bool State { get; set; }
 
         public virtual ICollection<Mineral> Minerals { get; set; }
+        public virtual ICollection<MiningConcession> MiningConcessions { get; set; }
     }
 }
