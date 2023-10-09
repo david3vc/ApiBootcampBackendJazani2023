@@ -18,5 +18,6 @@ namespace Jazani.Domain.Mcs.Models
         public bool IsSincronized { get; set; }
 
         public virtual MineralType MineralType { get; set; }
+        public virtual ICollection<Investment> Investments { get; set; }
     }
 }
