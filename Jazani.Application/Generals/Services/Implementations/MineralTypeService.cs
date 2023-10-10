@@ -81,7 +81,7 @@ namespace Jazani.Application.Generals.Services.Implementations
             return _mapper.Map<MineralTypeDto>(mineralType);
         }
 
-        public async Task<ResponsePagination<MineralTypeDto>> PaginationSearch(RequestPagination<MineralTypeDto> request)
+        public async Task<ResponsePagination<MineralTypeDto>> PaginationSearch(RequestPagination<MineralTypeFilterDto> request)
         {
             var entity = _mapper.Map<RequestPagination<MineralType>>(request);
 

@@ -26,7 +26,11 @@ namespace Jazani.Infrastructure.Generals.Persistences
 
             if (filter is not null)
             {
-                query = query.Where(x => string.IsNullOrWhiteSpace(filter.Name) || x.Name.ToUpper().Contains(filter.Name.ToUpper()));
+                query = query
+                    .Where(x =>
+                        (string.IsNullOrWhiteSpace(filter.Name) || x.Name.ToUpper().Contains(filter.Name.ToUpper()))
+                        && (string.IsNullOrWhiteSpace(filter.Description) || x.Description.ToUpper().Contains(filter.Description.ToUpper()))
+                    );
             }
 
             query = query.OrderByDescending(x => x.Id);

@@ -3,7 +3,7 @@ using Jazani.Application.Generals.Dtos.MineralTypes;
 
 namespace Jazani.Application.Generals.Services
 {
-    public interface IMineralTypeService : IPaginatedService<MineralTypeDto>
+    public interface IMineralTypeService : IPaginatedService<MineralTypeDto, MineralTypeFilterDto>
     {
         Task<IReadOnlyList<MineralTypeDto>> FindAllAsync();
         Task<MineralTypeDto?> FindByIdAsync(int id);

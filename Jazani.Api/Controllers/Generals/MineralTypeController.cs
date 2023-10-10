@@ -60,7 +60,7 @@ namespace Jazani.Api.Controllers.Generals
         }
 
         [HttpGet("PaginatedSearch")]
-        public async Task<ResponsePagination<MineralTypeDto>> PaginatedSearch([FromQuery] RequestPagination<MineralTypeDto> request)
+        public async Task<ResponsePagination<MineralTypeDto>> PaginatedSearch([FromQuery] RequestPagination<MineralTypeFilterDto> request)
         {
             return await _mineralTypeService.PaginationSearch(request);
         }
