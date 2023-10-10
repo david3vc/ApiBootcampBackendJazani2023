@@ -13,8 +13,18 @@ namespace Jazani.Infrastructure.Mcs.Configurations
             builder.HasKey(t => t.Id);
             builder.Property(t => t.AmountInvestd)
                 .HasColumnName("amountinvestd")
-                .HasColumnType("decimal(10,4)");
+                .HasColumnType("decimal");
             builder.Property(t => t.Description).HasColumnName("description");
+            builder.Property(t => t.Year).HasColumnName("year");
+            builder.Property(t => t.AccreditationCode).HasColumnName("accreditationcode");
+            builder.Property(t => t.AccountantCode).HasColumnName("accountantcode");
+            builder.Property(t => t.MetricTons).HasColumnName("metrictons");
+            builder.Property(t => t.MonthName).HasColumnName("monthname");
+            builder.Property(t => t.MonthId).HasColumnName("monthid");
+            builder.Property(t => t.Module).HasColumnName("module");
+            builder.Property(t => t.Frecuency).HasColumnName("frecuency");
+            builder.Property(t => t.IsDac).HasColumnName("isdac");
+            builder.Property(t => t.DeclarationDate).HasColumnName("declarationdate");
             builder.Property(t => t.MiningConcessionId).HasColumnName("miningconcessionid");
             builder.Property(t => t.DocumentId).HasColumnName("documentid");
             builder.Property(t => t.HolderId).HasColumnName("holderid");

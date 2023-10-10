@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using Jazani.Application.Cores.Exceptions;
+using Jazani.Application.Generals.Dtos.MineralTypes;
 using Jazani.Application.Mcs.Dtos.Investments;
+using Jazani.Core.Paginations;
+using Jazani.Domain.Generals.Models;
 using Jazani.Domain.Mcs.Models;
 using Jazani.Domain.Mcs.Repositories;
 using Microsoft.Extensions.Logging;
@@ -83,6 +86,15 @@ namespace Jazani.Application.Mcs.Services.Implementations
             }
 
             return _mapper.Map<InvestmentDto>(investment);
+        }
+
+        public async Task<ResponsePagination<InvestmentDto>> PaginationSearch(RequestPagination<InvestmentFilterDto> request)
+        {
+            var entity = _mapper.Map<RequestPagination<Investment>>(request);
+
+            var response = await _investmentRepository.PaginatedSearch(entity);
+
+            return _mapper.Map<ResponsePagination<InvestmentDto>>(response);
         }
 
         private NotFoundCoreException InvestmentNotFound(int id)
