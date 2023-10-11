@@ -1,5 +1,4 @@
 ﻿using Jazani.Domain.Cores.Repositories;
-using Jazani.Domain.Generals.Models;
 using Jazani.Domain.Mcs.Models;
 
 namespace Jazani.Domain.Mcs.Repositories

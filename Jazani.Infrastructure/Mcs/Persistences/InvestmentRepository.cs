@@ -1,6 +1,5 @@
 ﻿using Jazani.Core.Paginations;
 using Jazani.Domain.Cores.Paginations;
-using Jazani.Domain.Generals.Models;
 using Jazani.Domain.Mcs.Models;
 using Jazani.Domain.Mcs.Repositories;
 using Jazani.Infrastructure.Cores.Contexts;

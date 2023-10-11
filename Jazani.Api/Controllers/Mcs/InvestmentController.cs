@@ -1,5 +1,4 @@
 ﻿using Jazani.Api.Exceptions;
-using Jazani.Application.Generals.Dtos.MineralTypes;
 using Jazani.Application.Mcs.Dtos.Investments;
 using Jazani.Application.Mcs.Services;
 using Jazani.Core.Paginations;

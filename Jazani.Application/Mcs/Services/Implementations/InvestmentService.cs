@@ -1,9 +1,7 @@
 ﻿using AutoMapper;
 using Jazani.Application.Cores.Exceptions;
-using Jazani.Application.Generals.Dtos.MineralTypes;
 using Jazani.Application.Mcs.Dtos.Investments;
 using Jazani.Core.Paginations;
-using Jazani.Domain.Generals.Models;
 using Jazani.Domain.Mcs.Models;
 using Jazani.Domain.Mcs.Repositories;
 using Microsoft.Extensions.Logging;

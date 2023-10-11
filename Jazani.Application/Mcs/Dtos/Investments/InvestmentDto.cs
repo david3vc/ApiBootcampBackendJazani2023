@@ -5,10 +5,6 @@ using Jazani.Application.Mcs.Dtos.InvestmentConcepts;
 using Jazani.Application.Mcs.Dtos.InvestmentTypes;
 using Jazani.Application.Mcs.Dtos.MiningConcessions;
 using Jazani.Application.Socs.Dtos.Holders;
-using Jazani.Domain.Dls.Models;
-using Jazani.Domain.Generals.Models;
-using Jazani.Domain.Mcs.Models;
-using Jazani.Domain.Socs.Models;
 
 namespace Jazani.Application.Mcs.Dtos.Investments
 {
