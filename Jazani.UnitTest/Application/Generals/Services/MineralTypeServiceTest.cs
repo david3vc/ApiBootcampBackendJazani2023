@@ -32,24 +32,16 @@ namespace Jazani.UnitTest.Application.Generals.Services
 
             _mockILogger = new Mock<ILogger<MineralTypeService>>();
         }
-        
+
         [Fact]
         public async void returnMineralTypeDtoWhenFindByIdAsync()
         {
-            //Fixture fixture = new Fixture();
-            //fixture.Behaviors.Add(new OmitOnRecursionBehavior());
             MineralType mineralType = _fixture.Create<MineralType>();
 
 
             _mockMineralTypeRepository
                 .Setup(r => r.FindByIdAsync(It.IsAny<int>()))
                 .ReturnsAsync(mineralType);
-
-            
-
-            //IMapper mapper = mapperConfiguration.CreateMapper();
-
-            //Mock<ILogger<MineralTypeService>> mockILogger = new Mock<ILogger<MineralTypeService>>();
 
             // Act
             IMineralTypeService mineralTypeService = new MineralTypeService(_mockMineralTypeRepository.Object, _mapper, _mockILogger.Object);
@@ -66,7 +58,7 @@ namespace Jazani.UnitTest.Application.Generals.Services
         {
             // Arrays
             IReadOnlyList<MineralType> mineralTypes = _fixture.CreateMany<MineralType>(5).ToList();
-            
+
             _mockMineralTypeRepository
                 .Setup(r => r.FindAllAsync())
                 .ReturnsAsync(mineralTypes);

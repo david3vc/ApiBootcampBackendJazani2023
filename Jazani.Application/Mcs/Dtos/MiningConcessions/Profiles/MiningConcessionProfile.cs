@@ -9,6 +9,7 @@ namespace Jazani.Application.Mcs.Dtos.MiningConcessions.Profiles
         {
             CreateMap<MiningConcession, MiningConcessionDto>();
             CreateMap<MiningConcession, MiningConcessionSimpleDto>();
+            CreateMap<MiningConcessionSimpleDto, MiningConcession>();
 
             CreateMap<MiningConcession, MiningConcessionSaveDto>().ReverseMap();
         }
