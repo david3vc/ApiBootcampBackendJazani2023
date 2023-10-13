@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Jazani.Application.Admins.Dtos.Users
+﻿namespace Jazani.Application.Admins.Dtos.Users
 {
     public class UserSaveDto
     {

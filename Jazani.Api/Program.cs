@@ -5,10 +5,18 @@ using Jazani.Api.Filters;
 using Jazani.Api.Middlewares;
 using Jazani.Application.Cores.Contexts;
 using Jazani.Core.Securities.Services;
+using Jazani.Core.Securities.Services.Implementations;
 using Jazani.Infrastructure.Cores.Contexts;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Serilog;
 using Serilog.Events;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +35,12 @@ builder.Logging.AddSerilog(logger);
 builder.Services.AddControllers(options =>
 {
     options.Filters.Add(new ValidationFilter());
+
+    AuthorizationPolicy authorizationPolicy = new AuthorizationPolicyBuilder()
+    .RequireAuthenticatedUser()
+    .Build();
+
+    options.Filters.Add(new AuthorizeFilter());
 });
 
 // Route Options
@@ -51,6 +65,43 @@ builder.Services.Configure<PasswordHasherOptions>(options =>
 
 // ISecurityService
 builder.Services.AddTransient<ISecurityService, SecurityService>();
+
+// JWT
+string jwtSecretKey = builder.Configuration.GetSection("Security:JwtSecrectKey").Get<string>();
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    byte[] key = Encoding.ASCII.GetBytes(jwtSecretKey);
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateLifetime = true,
+        ValidIssuer = "",
+        ValidAudience = "",
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateIssuerSigningKey = true
+    };
+});
+
+// AuthorizeOperationFilter
+builder.Services.AddSwaggerGen(options =>
+{
+    options.OperationFilter<AuthorizeOperationFilter>();
+
+    string schemeName = "Bearer";
+    options.AddSecurityDefinition(schemeName, new OpenApiSecurityScheme(){
+        Name = schemeName,
+        BearerFormat = "JWT",
+        Scheme = "bearer",
+        Description = "Add token.",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http
+    });
+});
 
 // Infrastructure
 builder.Services.addInfrastructureServices(builder.Configuration);
